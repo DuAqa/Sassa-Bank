@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sassa Bank</title>
+  <meta name="description" content="Sassa Bank — o banco da Sabrina." />
+  <meta name="theme-color" content="#FF4F7B" />
+  <meta name="color-scheme" content="light" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sassa Bank" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.googleusercontent.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/; frame-src https://accounts.google.com/gsi/; base-uri 'self'; form-action 'self'" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <a class="skip" href="#view">Pular para o conteúdo</a>
+
+  <div class="app">
+    <aside class="rail" aria-label="Navegação principal">
+      <div class="brand">
+        <img src="icons/icon.svg" alt="" width="36" height="36" />
+        <span>Sassa <b>Bank</b></span>
+      </div>
+      <nav class="tabs" aria-label="Seções">
+        <a href="#/inicio" data-tab="inicio"><span class="ti">🏠</span><span>Início</span></a>
+        <a href="#/extrato" data-tab="extrato"><span class="ti">🧾</span><span>Extrato</span></a>
+        <a href="#/analise" data-tab="analise"><span class="ti">📊</span><span>Análise</span></a>
+        <a href="#/metas" data-tab="metas"><span class="ti">🎯</span><span>Metas</span></a>
+        <a href="#/ajustes" data-tab="ajustes"><span class="ti">⚙️</span><span>Ajustes</span></a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="brand brand-mobile">
+          <img src="icons/icon.svg" alt="" width="30" height="30" />
+          <span>Sassa <b>Bank</b></span>
+        </div>
+        <div class="topbar-right">
+          <button id="install-btn" class="btn btn-soft btn-sm" hidden>📲 Instalar</button>
+          <a id="sync-pill" class="sync-pill" href="#/ajustes" aria-label="Status de sincronização"></a>
+        </div>
+      </header>
+
+      <div id="offline-bar" class="offline-bar" role="status" hidden>🔴 Offline — suas anotações ficam guardadas e sincronizam depois.</div>
+      <div id="demo-banner" class="demo-banner" hidden>
+        <span>🧪 <strong>Dados de demonstração</strong> — só para testar.</span>
+        <button class="link" data-action="data-fresh">Começar de verdade</button>
+      </div>
+
+      <main id="view" tabindex="-1" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <button id="fab" class="fab" aria-label="Registrar movimentação"><span aria-hidden="true">＋</span> Registrar</button>
+
+  <div id="sheets"></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <noscript>O Sassa Bank precisa de JavaScript para funcionar.</noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
